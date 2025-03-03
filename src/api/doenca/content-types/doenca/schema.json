@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "doencas",
+  "info": {
+    "singularName": "doenca",
+    "pluralName": "doencas",
+    "displayName": "Doença",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "nome": {
+      "type": "string",
+      "unique": false,
+      "required": true
+    },
+    "testemunhos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::testemunho.testemunho",
+      "mappedBy": "doenca"
+    },
+    "desc": {
+      "type": "text"
+    }
+  }
+}

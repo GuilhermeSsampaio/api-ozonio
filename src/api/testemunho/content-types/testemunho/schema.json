@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "testemunhos",
+  "info": {
+    "singularName": "testemunho",
+    "pluralName": "testemunhos",
+    "displayName": "Testemunho",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "titulo_testemunho": {
+      "type": "string",
+      "default": "título do testemunho",
+      "required": true,
+      "unique": true
+    },
+    "media": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "doenca": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::doenca.doenca",
+      "inversedBy": "testemunhos"
+    },
+    "desc": {
+      "type": "text"
+    }
+  }
+}
